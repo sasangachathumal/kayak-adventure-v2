@@ -1,1 +1,8 @@
-<p>admin works!</p>
+<h2>File Upload</h2>
+<input type="file" class="text-nowrap text-truncate" (change)="selectFile($event)" />
+<button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+  Upload
+</button>
+@if (currentFileUpload) {
+{{ percentage }}%
+}
