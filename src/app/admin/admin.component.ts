@@ -29,14 +29,15 @@ export class AdminComponent {
 
       if (file) {
         this.currentFileUpload = new FileUpload(file);
-        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-          (percentage: any) => {
-            this.percentage = Math.round(percentage ? percentage : 0);
-          },
-          (error: any) => {
-            console.log(error);
-          }
-        );
+        this.uploadService.uploadFile(file);
+        // this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+        //   (percentage: any) => {
+        //     this.percentage = Math.round(percentage ? percentage : 0);
+        //   },
+        //   (error: any) => {
+        //     console.log(error);
+        //   }
+        // );
       }
     }
   }
